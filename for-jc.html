@@ -1,113 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para kay JC</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌙 goodnight, JC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
-            color: #4a4a4a;
-            text-align: center;
-            padding: 20px;
-        }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0b0e1a;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, #fff9e6, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40% 70%, #f5f0ff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 70% 20%, #fff8e7, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90% 80%, #e0eaff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 10% 90%, #faf0e6, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50% 50%, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 25% 45%, #fff6d5, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 75% 55%, #f0f5ff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 15% 65%, #ffe9c4, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 85% 35%, #d9e6ff, rgba(0,0,0,0)),
+        radial-gradient(circle at 30% 20%, #2a2f4a 0%, #0b0e1a 90%);
+      background-blend-mode: overlay, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal;
+      background-size: 180px 180px, 220px 220px, 300px 300px, 200px 200px, 250px 250px, 400px 400px, 150px 150px, 180px 180px, 200px 200px, 160px 160px, 100% 100%;
+      background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat;
+      padding: 1rem;
+      position: relative;
+    }
 
-        .container {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+    /* moon */
+    .moon {
+      position: absolute;
+      top: 8%;
+      right: 12%;
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle at 30% 30%, #fcf3d9, #f5e5b0);
+      border-radius: 50%;
+      box-shadow: 0 0 30px #f9e8b0, 0 0 60px #eedbaa55, 0 0 100px #f7e7b933;
+      opacity: 0.8;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .moon::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 18px;
+      width: 18px;
+      height: 18px;
+      background: rgba(255, 240, 200, 0.4);
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+    .moon::before {
+      content: '';
+      position: absolute;
+      bottom: 16px;
+      right: 14px;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 240, 200, 0.25);
+      border-radius: 50%;
+      filter: blur(1px);
+    }
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #ff477e;
-        }
+    /* twinkling stars */
+    .stars-extra {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .stars-extra span {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 1px #f5f0ffaa;
+      animation: twinkle 3.5s infinite alternate;
+    }
+    .stars-extra span:nth-child(1) { top: 15%; left: 8%; animation-delay: 0.2s; width: 4px; height: 4px; }
+    .stars-extra span:nth-child(2) { top: 25%; left: 88%; animation-delay: 1.2s; }
+    .stars-extra span:nth-child(3) { top: 65%; left: 5%; animation-delay: 0.8s; width: 5px; height: 5px; }
+    .stars-extra span:nth-child(4) { top: 80%; left: 92%; animation-delay: 2s; }
+    .stars-extra span:nth-child(5) { top: 45%; left: 50%; animation-delay: 0.5s; width: 6px; height: 6px; }
+    .stars-extra span:nth-child(6) { top: 10%; left: 45%; animation-delay: 1.8s; }
+    .stars-extra span:nth-child(7) { top: 70%; left: 30%; animation-delay: 0.1s; }
+    .stars-extra span:nth-child(8) { top: 40%; left: 75%; animation-delay: 2.5s; }
 
-        .btn {
-            background-color: #ff477e;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.3);
-        }
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
 
-        .btn:hover {
-            background-color: #ff0a54;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 10, 84, 0.4);
-        }
+    /* CARD */
+    .card {
+      position: relative;
+      z-index: 10;
+      background: rgba(18, 22, 40, 0.65);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-radius: 40px;
+      padding: 2.2rem 2rem;
+      max-width: 440px;
+      width: 100%;
+      border: 1px solid rgba(200, 215, 255, 0.15);
+      box-shadow: 0 30px 60px -15px #03050c, 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
 
-        .btn:active {
-            transform: translateY(-1px);
-        }
+    /* HEADER: "HI?" */
+    .greeting {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #f0edff;
+      text-shadow: 0 0 20px #b7c9ff55, 0 0 40px #7f8fcb33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.6rem;
+      margin-bottom: 1.5rem;
+    }
 
-        .message {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #333;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.5s ease;
-            display: none;
-        }
+    /* BUTTON — with rotating Tiffany blue heart */
+    .action-btn {
+      background: rgba(30, 40, 70, 0.5);
+      border: 1px solid rgba(130, 200, 220, 0.2);
+      padding: 1rem 2.6rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #d6e6ff;
+      border-radius: 80px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 8px 25px -5px #0f1422, 0 0 0 1px rgba(180, 210, 255, 0.05) inset;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.5rem;
+    }
 
-        .message.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .action-btn .heart-icon {
+      display: inline-block;
+      font-size: 1.9rem;
+      line-height: 1;
+      color: #8fd6e0;
+      filter: drop-shadow(0 0 8px #6ac8d6);
+      animation: spinHeart 6s linear infinite;
+      transform-origin: center;
+    }
 
-        .heart {
-            color: #ff477e;
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-    </style>
+    @keyframes spinHeart {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .action-btn:hover {
+      background: rgba(45, 60, 105, 0.6);
+      border-color: #86c8d9aa;
+      box-shadow: 0 12px 30px -8px #1d2745, 0 0 20px #6ac8d633;
+      transform: scale(1.02);
+    }
+
+    .action-btn:active {
+      transform: scale(0.96);
+    }
+
+    .action-btn.hidden {
+      display: none;
+    }
+
+    /* POPUP — lalabas after click */
+    .popup-message {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: scale(0.95) translateY(10px);
+      transition: max-height 0.5s ease, opacity 0.45s ease, transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .popup-message.show {
+      max-height: 500px;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      margin-top: 0.5rem;
+    }
+
+    /* CENTER MESSAGE: "Goodnight, sleep tight JC!" sa loob ng capsule */
+    .center-message {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #d6e6ff;
+      text-shadow: 0 0 30px #7fa8e055, 0 0 60px #4a6a9a33;
+      letter-spacing: 0.5px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.6rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid rgba(130, 180, 220, 0.15);
+      backdrop-filter: blur(2px);
+      width: 100%;
+      white-space: nowrap;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .center-message .jc-highlight {
+      color: #b8d4ff;
+      font-weight: 600;
+      text-shadow: 0 0 25px #7aadff88;
+    }
+
+    .popup-message .sweet-dreams {
+      font-size: 0.95rem; 
+      color: #98b0da; 
+      background: rgba(80,110,160,0.1); 
+      padding: 0.35rem 2.2rem; 
+      border-radius: 50px; 
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+
+    .footnote {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #7f8bb3;
+      opacity: 0.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 460px) {
+      .card { padding: 1.8rem 1.2rem; border-radius: 30px; }
+      .greeting { font-size: 2.2rem; margin-bottom: 1.2rem; }
+      .action-btn { padding: 0.8rem 1.5rem; font-size: 1.1rem; gap: 10px; }
+      .center-message { font-size: 1.1rem; padding: 0.5rem 1.2rem; }
+      .popup-message .sweet-dreams { font-size: 0.85rem; padding: 0.3rem 1.8rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Hi!🙋‍♂️</h1>
-        <button class="btn" id="clickBtn">Click me</button>
-        <div class="message" id="secretMessage"></div>
+  <!-- moon & stars -->
+  <div class="moon"></div>
+  <div class="stars-extra">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="card">
+    <!-- HEADER: "HI?" -->
+    <div class="greeting">
+      <span>👋</span> HI?
     </div>
 
-    <script>
-        document.getElementById('clickBtn').addEventListener('click', function() {
-            const messageDiv = document.getElementById('secretMessage');
-            
-            // Ang mensahe para kay JC
-            messageDiv.innerHTML = `
-                <strong>Hi JC!</strong> Cute mo, pakiss nga! JK Wehehehehehe <br>
-                <div class="heart">✨ ❤️ ✨</div>
-            `;
-            
-            // Ipapakita ang mensahe at itatago ang button
-            messageDiv.classList.add('show');
-            this.style.display = 'none';
-        });
-    </script>
+    <!-- BUTTON: "Click Me" -->
+    <button class="action-btn" id="clickBtn">
+      <span>Click Me</span>
+      <span class="heart-icon">💙</span>
+    </button>
 
+    <!-- POPUP (Lalabas lahat dito pag click) -->
+    <div class="popup-message" id="popupMessage">
+      
+      <!-- Eto na yung "Goodnight, sleep tight JC!" sa loob ng capsule -->
+      <div class="center-message">
+        💤 Goodnight, sleep tight <span class="jc-highlight">JC!</span> 💤
+      </div>
+
+      <div class="sweet-dreams">
+        🌠 sweet dreams 🌠
+      </div>
+    </div>
+
+    <!-- Footnote changed from stellar to VIRGO -->
+    <div class="footnote">✨ · VIRGO · ✨</div>
+  </div>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('clickBtn');
+      const popup = document.getElementById('popupMessage');
+
+      btn.addEventListener('click', function(e) {
+        popup.classList.add('show');
+        btn.classList.add('hidden');
+        console.log('🌙 goodnight, JC!');
+      });
+    })();
+  </script>
 </body>
 </html>
