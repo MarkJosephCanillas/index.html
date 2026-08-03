@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌙 goodnight, JC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔐 GCash • Secure Login</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
     body {
@@ -17,179 +17,199 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #0b0e1a;
-      background-image:
-        radial-gradient(2px 2px at 20% 30%, #fff9e6, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40% 70%, #f5f0ff, rgba(0,0,0,0)),
-        radial-gradient(3px 3px at 70% 20%, #fff8e7, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90% 80%, #e0eaff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 10% 90%, #faf0e6, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50% 50%, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 25% 45%, #fff6d5, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 75% 55%, #f0f5ff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 15% 65%, #ffe9c4, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 85% 35%, #d9e6ff, rgba(0,0,0,0)),
-        radial-gradient(circle at 30% 20%, #2a2f4a 0%, #0b0e1a 90%);
-      background-blend-mode: overlay, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal;
-      background-size: 180px 180px, 220px 220px, 300px 300px, 200px 200px, 250px 250px, 400px 400px, 150px 150px, 180px 180px, 200px 200px, 160px 160px, 100% 100%;
-      background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, no-repeat;
-      padding: 1rem;
+      background: #0b0f1a;
+      background-image: 
+        radial-gradient(circle at 15% 30%, #1a2a3f 0%, #0b0f1a 80%);
+      padding: 1.5rem;
       position: relative;
     }
 
-    /* moon */
-    .moon {
-      position: absolute;
-      top: 8%;
-      right: 12%;
-      width: 70px;
-      height: 70px;
-      background: radial-gradient(circle at 30% 30%, #fcf3d9, #f5e5b0);
-      border-radius: 50%;
-      box-shadow: 0 0 30px #f9e8b0, 0 0 60px #eedbaa55, 0 0 100px #f7e7b933;
-      opacity: 0.8;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .moon::after {
+    /* subtle tech-grid overlay */
+    body::before {
       content: '';
-      position: absolute;
-      top: 12px;
-      left: 18px;
-      width: 18px;
-      height: 18px;
-      background: rgba(255, 240, 200, 0.4);
-      border-radius: 50%;
-      filter: blur(2px);
-    }
-    .moon::before {
-      content: '';
-      position: absolute;
-      bottom: 16px;
-      right: 14px;
-      width: 10px;
-      height: 10px;
-      background: rgba(255, 240, 200, 0.25);
-      border-radius: 50%;
-      filter: blur(1px);
-    }
-
-    /* twinkling stars */
-    .stars-extra {
       position: absolute;
       inset: 0;
+      background-image: 
+        linear-gradient(rgba(60, 130, 200, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 130, 200, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
     }
-    .stars-extra span {
+
+    /* floating “security” orbs */
+    .orb {
       position: absolute;
-      width: 3px;
-      height: 3px;
-      background: white;
       border-radius: 50%;
-      box-shadow: 0 0 6px 1px #f5f0ffaa;
-      animation: twinkle 3.5s infinite alternate;
+      filter: blur(70px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
     }
-    .stars-extra span:nth-child(1) { top: 15%; left: 8%; animation-delay: 0.2s; width: 4px; height: 4px; }
-    .stars-extra span:nth-child(2) { top: 25%; left: 88%; animation-delay: 1.2s; }
-    .stars-extra span:nth-child(3) { top: 65%; left: 5%; animation-delay: 0.8s; width: 5px; height: 5px; }
-    .stars-extra span:nth-child(4) { top: 80%; left: 92%; animation-delay: 2s; }
-    .stars-extra span:nth-child(5) { top: 45%; left: 50%; animation-delay: 0.5s; width: 6px; height: 6px; }
-    .stars-extra span:nth-child(6) { top: 10%; left: 45%; animation-delay: 1.8s; }
-    .stars-extra span:nth-child(7) { top: 70%; left: 30%; animation-delay: 0.1s; }
-    .stars-extra span:nth-child(8) { top: 40%; left: 75%; animation-delay: 2.5s; }
-
-    @keyframes twinkle {
-      0% { opacity: 0.2; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1.3); }
+    .orb-1 {
+      width: 300px;
+      height: 300px;
+      background: #1f6e8c;
+      top: -80px;
+      right: -60px;
+    }
+    .orb-2 {
+      width: 250px;
+      height: 250px;
+      background: #2b4f6e;
+      bottom: -60px;
+      left: -40px;
     }
 
-    /* CARD */
+    /* main card — phishing simulation */
     .card {
       position: relative;
       z-index: 10;
-      background: rgba(18, 22, 40, 0.65);
-      backdrop-filter: blur(14px) saturate(180%);
-      -webkit-backdrop-filter: blur(14px) saturate(180%);
-      border-radius: 40px;
-      padding: 2.2rem 2rem;
-      max-width: 440px;
+      background: rgba(14, 20, 34, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 42px;
+      padding: 2.2rem 2rem 2rem;
+      max-width: 420px;
       width: 100%;
-      border: 1px solid rgba(200, 215, 255, 0.15);
-      box-shadow: 0 30px 60px -15px #03050c, 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
-      text-align: center;
-      transition: all 0.4s ease;
+      border: 1px solid rgba(70, 150, 220, 0.15);
+      box-shadow: 0 30px 50px -20px #03050c, 0 0 0 1px rgba(110, 180, 255, 0.04) inset;
+      transition: all 0.25s ease;
     }
 
-    /* HEADER: "HI?" */
-    .greeting {
-      font-size: 2.6rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      color: #f0edff;
-      text-shadow: 0 0 20px #b7c9ff55, 0 0 40px #7f8fcb33;
+    /* header — GCash style */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 1.8rem;
+      justify-content: center;
+    }
+    .brand-icon {
+      background: #007aff;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.3rem 0.6rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 6px 18px #007aff55;
+    }
+    .brand-text {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #eef5ff;
+      letter-spacing: -0.3px;
+      text-shadow: 0 0 16px #2a7fff33;
+    }
+    .brand-text span {
+      color: #7bb3ff;
+      font-weight: 300;
     }
 
-    /* BUTTON — with rotating Tiffany blue heart */
+    /* fake “secure” badge */
+    .secure-badge {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(30, 200, 150, 0.08);
+      border: 1px solid rgba(50, 200, 180, 0.12);
+      border-radius: 60px;
+      padding: 0.3rem 1rem;
+      width: fit-content;
+      margin: 0 auto 1.8rem auto;
+      color: #95d0cc;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      backdrop-filter: blur(2px);
+    }
+    .secure-badge i {
+      font-style: normal;
+      font-size: 1rem;
+    }
+
+    /* form fields */
+    .input-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    .input-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #a0b9e0;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+    }
+    .input-group input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(100, 170, 255, 0.12);
+      border-radius: 20px;
+      padding: 0.9rem 1.2rem;
+      font-size: 1rem;
+      color: #e0edff;
+      outline: none;
+      transition: 0.2s;
+      backdrop-filter: blur(2px);
+    }
+    .input-group input:focus {
+      border-color: #2b7cff;
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 0 20px #1f6eff22;
+    }
+    .input-group input::placeholder {
+      color: #5d7199;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    /* simulate “MPIN” with password type */
+    .input-group input[type="password"] {
+      letter-spacing: 4px;
+      font-weight: 500;
+    }
+
+    /* action button — “Login” */
     .action-btn {
-      background: rgba(30, 40, 70, 0.5);
-      border: 1px solid rgba(130, 200, 220, 0.2);
-      padding: 1rem 2.6rem;
-      font-size: 1.3rem;
+      width: 100%;
+      background: #007aff;
+      border: none;
+      padding: 1rem 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      color: #d6e6ff;
-      border-radius: 80px;
+      color: white;
+      border-radius: 40px;
       cursor: pointer;
       backdrop-filter: blur(4px);
-      box-shadow: 0 8px 25px -5px #0f1422, 0 0 0 1px rgba(180, 210, 255, 0.05) inset;
+      box-shadow: 0 8px 30px -8px #0055dd55;
       transition: 0.2s ease;
-      display: inline-flex;
+      margin: 1.2rem 0 1rem;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
-      letter-spacing: 0.4px;
-      margin-bottom: 0.5rem;
+      gap: 12px;
+      letter-spacing: 0.3px;
     }
-
-    .action-btn .heart-icon {
-      display: inline-block;
-      font-size: 1.9rem;
-      line-height: 1;
-      color: #8fd6e0;
-      filter: drop-shadow(0 0 8px #6ac8d6);
-      animation: spinHeart 6s linear infinite;
-      transform-origin: center;
-    }
-
-    @keyframes spinHeart {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.1); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-
     .action-btn:hover {
-      background: rgba(45, 60, 105, 0.6);
-      border-color: #86c8d9aa;
-      box-shadow: 0 12px 30px -8px #1d2745, 0 0 20px #6ac8d633;
-      transform: scale(1.02);
+      background: #1a86ff;
+      transform: scale(1.01);
+      box-shadow: 0 12px 40px -8px #0055ff88;
     }
-
     .action-btn:active {
       transform: scale(0.96);
     }
-
     .action-btn.hidden {
       display: none;
     }
 
-    /* POPUP — lalabas after click */
+    /* popup / “phish reveal” */
     .popup-message {
       max-height: 0;
       opacity: 0;
@@ -199,119 +219,202 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
+      margin-top: 0.2rem;
     }
-
     .popup-message.show {
-      max-height: 500px;
+      max-height: 600px;
       opacity: 1;
       transform: scale(1) translateY(0);
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
 
-    /* CENTER MESSAGE: "Goodnight, sleep tight JC!" sa loob ng capsule */
-    .center-message {
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: #d6e6ff;
-      text-shadow: 0 0 30px #7fa8e055, 0 0 60px #4a6a9a33;
-      letter-spacing: 0.5px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.6rem 1.5rem;
+    /* warning capsule */
+    .phish-alert {
+      background: rgba(255, 70, 70, 0.08);
+      border: 1px solid rgba(255, 100, 100, 0.2);
       border-radius: 60px;
-      border: 1px solid rgba(130, 180, 220, 0.15);
-      backdrop-filter: blur(2px);
-      width: 100%;
-      white-space: nowrap;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .center-message .jc-highlight {
-      color: #b8d4ff;
-      font-weight: 600;
-      text-shadow: 0 0 25px #7aadff88;
-    }
-
-    .popup-message .sweet-dreams {
-      font-size: 0.95rem; 
-      color: #98b0da; 
-      background: rgba(80,110,160,0.1); 
-      padding: 0.35rem 2.2rem; 
-      border-radius: 50px; 
+      padding: 0.8rem 1.8rem;
       backdrop-filter: blur(4px);
-      white-space: nowrap;
+      color: #ffbaba;
+      font-weight: 500;
+      font-size: 0.95rem;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .phish-alert .highlight {
+      color: #ff8a8a;
+      font-weight: 600;
+    }
+
+    .fake-data {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 40px;
+      padding: 0.8rem 1.2rem;
+      width: 100%;
+      border: 1px solid rgba(255, 200, 100, 0.06);
+      color: #b8ccf0;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .fake-data .row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255,255,255,0.03);
+      padding: 0.25rem 0;
+    }
+    .fake-data .row:last-child {
+      border-bottom: none;
+    }
+    .fake-data .label {
+      color: #6f8bb0;
+      font-weight: 400;
+    }
+    .fake-data .value {
+      color: #d6e6ff;
+      font-weight: 500;
+      letter-spacing: 0.3px;
     }
 
     .footnote {
       margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: #7f8bb3;
-      opacity: 0.4;
-      letter-spacing: 1.5px;
+      font-size: 0.65rem;
+      color: #3a5170;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
+      text-align: center;
+      opacity: 0.5;
+      border-top: 1px solid rgba(255,255,255,0.02);
+      padding-top: 1.2rem;
     }
 
+    /* responsiveness */
     @media (max-width: 460px) {
-      .card { padding: 1.8rem 1.2rem; border-radius: 30px; }
-      .greeting { font-size: 2.2rem; margin-bottom: 1.2rem; }
-      .action-btn { padding: 0.8rem 1.5rem; font-size: 1.1rem; gap: 10px; }
-      .center-message { font-size: 1.1rem; padding: 0.5rem 1.2rem; }
-      .popup-message .sweet-dreams { font-size: 0.85rem; padding: 0.3rem 1.8rem; }
+      .card { padding: 1.8rem 1.2rem; border-radius: 32px; }
+      .brand-text { font-size: 1.5rem; }
+      .action-btn { font-size: 1rem; padding: 0.9rem 1rem; }
+      .phish-alert { font-size: 0.85rem; padding: 0.6rem 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- moon & stars -->
-  <div class="moon"></div>
-  <div class="stars-extra">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-  </div>
+  <!-- decorative orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
 
   <div class="card">
-    <!-- HEADER: "HI?" -->
-    <div class="greeting">
-      <span>👋</span> HI?
+
+    <!-- brand header -->
+    <div class="brand">
+      <div class="brand-icon">₱</div>
+      <div class="brand-text">GCash<span> •</span></div>
     </div>
 
-    <!-- BUTTON: "Click Me" -->
-    <button class="action-btn" id="clickBtn">
-      <span>Click Me</span>
-      <span class="heart-icon">💙</span>
+    <!-- fake secure badge -->
+    <div class="secure-badge">
+      <i>🔒</i> • 256‑bit encrypted • 
+    </div>
+
+    <!-- PHISHING FORM (collects Name, MPIN, Account) -->
+    <div class="input-group">
+      <label>📛 Full Name</label>
+      <input type="text" id="fullName" placeholder="Juan C. Dela Cruz" value="JC Dela Cruz" />
+    </div>
+
+    <div class="input-group">
+      <label>🔑 MPIN (6 digits)</label>
+      <input type="password" id="mpin" placeholder="••••••" maxlength="6" value="123456" />
+    </div>
+
+    <div class="input-group">
+      <label>📱 Account Number</label>
+      <input type="text" id="accountNum" placeholder="0917 123 4567" value="0917 555 0192" />
+    </div>
+
+    <!-- Submit / "Login" button (triggers phishing reveal) -->
+    <button class="action-btn" id="phishBtn">
+      <span>🔓</span> Login to GCash
     </button>
 
-    <!-- POPUP (Lalabas lahat dito pag click) -->
+    <!-- POPUP / PHISHING REVEAL (shows captured data) -->
     <div class="popup-message" id="popupMessage">
-      
-      <!-- Eto na yung "Goodnight, sleep tight JC!" sa loob ng capsule -->
-      <div class="center-message">
-        💤 Goodnight, sleep tight <span class="jc-highlight">JC!</span> 💤
+
+      <div class="phish-alert">
+        ⚠️ <span class="highlight">PHISHING SIMULATION</span> ⚠️
       </div>
 
-      <div class="sweet-dreams">
-        🌠 sweet dreams 🌠
+      <div class="fake-data">
+        <div class="row">
+          <span class="label">📛 Name</span>
+          <span class="value" id="displayName">JC Dela Cruz</span>
+        </div>
+        <div class="row">
+          <span class="label">🔑 MPIN</span>
+          <span class="value" id="displayMpin">123456</span>
+        </div>
+        <div class="row">
+          <span class="label">📱 Account</span>
+          <span class="value" id="displayAccount">0917 555 0192</span>
+        </div>
       </div>
+
+      <div style="font-size: 0.75rem; color: #5f7ca0; background: rgba(0,0,0,0.15); padding: 0.4rem 1.5rem; border-radius: 40px;">
+        🧪 for Information Security • Role‑Play
+      </div>
+
     </div>
 
-    <!-- Footnote changed from stellar to VIRGO -->
-    <div class="footnote">✨ · VIRGO · ✨</div>
+    <div class="footnote">⚠️ EDUCATIONAL PURPOSE ONLY — #PhishingAwareness</div>
   </div>
 
   <script>
     (function() {
-      const btn = document.getElementById('clickBtn');
+      const btn = document.getElementById('phishBtn');
       const popup = document.getElementById('popupMessage');
 
+      // display elements
+      const displayName = document.getElementById('displayName');
+      const displayMpin = document.getElementById('displayMpin');
+      const displayAccount = document.getElementById('displayAccount');
+
+      // input fields
+      const nameInput = document.getElementById('fullName');
+      const mpinInput = document.getElementById('mpin');
+      const accountInput = document.getElementById('accountNum');
+
       btn.addEventListener('click', function(e) {
+        e.preventDefault(); 
+
+        // capture current values (trim)
+        const nameVal = nameInput.value.trim() || 'JC Dela Cruz';
+        const mpinVal = mpinInput.value.trim() || '123456';
+        const accountVal = accountInput.value.trim() || '0917 555 0192';
+
+        // update popup with captured data
+        displayName.textContent = nameVal;
+        displayMpin.textContent = mpinVal;
+        displayAccount.textContent = accountVal;
+
+        // show popup, hide button
         popup.classList.add('show');
         btn.classList.add('hidden');
-        console.log('🌙 goodnight, JC!');
+
+        // console log for awareness (like a security log)
+        console.log('🔐 PHISHING CAPTURE (sim) — Name:', nameVal, 'MPIN:', mpinVal, 'Account:', accountVal);
       });
+
+      // optional: reset if user clicks again? we hide button permanently, but can re-enable for demo
+      // just for roleplay, if they refresh page it resets.
     })();
   </script>
+
 </body>
 </html>
